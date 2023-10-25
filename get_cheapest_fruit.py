@@ -8,4 +8,10 @@ def get_cheapest_fruit(data: str) -> str:
         str: name of the cheapest fruit
     """
     # your code here
-    pass
+    from csv import reader
+    f = open(data)
+    a = []
+    for i in f:
+        a.append(i[1:])
+    return tuple(i[0:]) 
+print(get_cheapest_fruit("fruits.csv"))
